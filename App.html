@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta charset="UTF8">
+<title>Luskas</title>
+</head>
+
+<script>        
+      function addItem(){                
+        var newTR     = document.createElement("TR");
+        var newINPUT  = document.createElement("INPUT"); 
+        var newTD     = document.createElement("TD");
+        var newBt     = document.createElement("BUTTON");
+        newBt.innerHTML = 'Excluir Item';
+ 
+        
+        var newINPUT1 = document.createElement("INPUT"); 
+         
+        newTR.appendChild(newINPUT);         
+        newTR.appendChild(newTD);       
+        newTR.appendChild(newINPUT1);       
+       
+        newTR.appendChild(newBt);
+         
+        var element = document.getElementById("item");          
+        element.appendChild(newTR);      
+      }
+ 
+      function removeItem(r){
+               var i = r.parentNode.parentNode.rowIndex;
+               alert(i);
+               document.getElementById("idTable").deleteRow(i);     
+      }
+      
+      </script>
+	
+     <div id="item">    
+     <table">
+          <tr>
+            <td>Nome:</td>   
+            <td>Endereço:</td>     
+            
+          </tr>       
+        </table>  
+        <table id="idTable">
+          <tr> 
+           <div id="texto">          
+            <td><input type="text" name="nome" id="idcampo"></td> 
+            <td><input type="text" name="endereco" id="idEndereco"></td>           
+           </td>
+            <td><input type="button" onclick="removeItem(this)" value="Excluir Item"></td>
+           </div>          
+          </tr>         
+        </table> 
+              <input type="button" id="btn" onclick="addItem()"   value="Adicionar Item">
+     </div> 
+	 
+</body>
+</html>
